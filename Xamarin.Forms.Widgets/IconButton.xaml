@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Xamarin.Forms.Widgets.IconButton">
+
+    <ContentView.Content>
+        <AbsoluteLayout BindingContext="{x:Reference this}">
+            <Button x:Name="button"
+                    Text="{Binding Text}"
+                    FontSize="{Binding TextSize}"
+                    IsVisible="{Binding ButtonStyle}"
+                    AbsoluteLayout.LayoutFlags="All"
+                    AbsoluteLayout.LayoutBounds="0,0,1,1"
+                    Command="{Binding Command}"
+                    CommandParameter="{Binding .}"
+                    Clicked="button_Clicked"
+                    Pressed="button_Pressed"
+                    Released="button_Released"
+                    d:Text="Login"/>
+            <Label Text="{Binding Icon}"
+                   FontSize="{Binding IconSize}"
+                   Margin="{Binding IconMargin}"
+                   FontFamily="{Binding IconFont}"
+                   InputTransparent="{Binding ButtonStyle}"
+                   AbsoluteLayout.LayoutFlags="PositionProportional"
+                   AbsoluteLayout.LayoutBounds="0,.5,AutoSize,AutoSize"
+                   d:Text="&#9673;"
+                   d:FontSize="36">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Command="{Binding Command}"
+                        CommandParameter="{Binding .}"
+                        Tapped="TapGestureRecognizer_Tapped"/>
+                </Label.GestureRecognizers>
+            </Label>
+        </AbsoluteLayout>
+    </ContentView.Content>
+    
+</ContentView>
