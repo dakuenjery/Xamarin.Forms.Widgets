@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:widgets="clr-namespace:Xamarin.Forms.Widgets;assembly=Xamarin.Forms.Widgets"
+             mc:Ignorable="d"
+             x:Class="XamarinTestApp.Page1">
+
+    <ContentPage.Resources>
+        <OnPlatform x:TypeArguments="x:String"
+                x:Key="IconFont">
+            <On Platform="Android"
+            Value="materialdesignicons-webfont.ttf#Material Design Icons" />
+            <On Platform="iOS"
+            Value="materialdesignicons-webfont" />
+            <On Platform="WPF"
+            Value="/Assets/materialdesignicons-webfont.ttf#Material Design Icons" />
+        </OnPlatform>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Welcome to Xamarin.Forms!"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+
+            <widgets:IconButton
+                IconFont="{StaticResource IconFont}"
+                Icon="&#xF1F5;"
+                Text="Button" VerticalOptions="Center" HorizontalOptions="Center"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
